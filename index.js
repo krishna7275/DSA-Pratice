@@ -149,18 +149,39 @@
 
 // #7 ...................................................................................
 
- let n = 5;
-for(let i = 0;i<n;i++){
-    let row="";
-    let toggle =1;
-    for(let j=0;j <= i;j++){ 
-        row = row + toggle;
-        if (toggle == 1) {
-            toggle = 0;
-        }
-        else{
-            toggle = 1;
-        }
-    }     
-    console.log(row);
-} 
+//  let n = 5;
+// for(let i = 0;i<n;i++){
+//     let row="";
+//     let toggle =1;
+//     for(let j=0;j <= i;j++){ 
+//         row = row + toggle;
+//         if (toggle == 1) {
+//             toggle = 0;
+//         }
+//         else{
+//             toggle = 1;
+//         }
+//     }     
+//     console.log(row);
+// } 
+
+
+// Count the number of digith's
+
+let n=-54;
+let count = 0;
+
+function Count(n){
+    if(n == 0){
+        return 1;
+    }
+// change the negative number to positive
+    n = Math.abs(n);
+    while(n>0){
+        n = Math.floor((n=n/10));
+        count++;
+    }
+    return count;
+}
+
+console.log(Count(n));
