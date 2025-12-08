@@ -5,7 +5,7 @@
 //         if (arr[i] == n) {
 //             return i;
 //         }
-        
+
 //     }
 //     return -1;
 // }
@@ -15,7 +15,6 @@
 // console.log(searchElement(arr, 3));
 // console.log(searchElement(arr, 11));
 
-
 // Count a negative nUmber
 //  let arr= [4,-8,2,-3,6,-11,10];
 
@@ -24,12 +23,11 @@
 //     for(let i =0; i < arr.length ; i++){
 //         if(arr[i] < 0){
 //             count++;
-//         } 
+//         }
 //     }
 //     return count;
 //  }
 //  console.log(countNegative(arr));
-
 
 // Find the largest number inarray
 // let arr= [-4,-8,-2,-3,-6,-11,-10];
@@ -67,7 +65,6 @@
 
 // console.log(seclargestNumber(arr1));
 
-
 // Print a star pattrens
 
 //#1.........................................
@@ -78,7 +75,7 @@
 //         row = row +" *";
 //     }
 //     console.log(row);
-// } 
+// }
 
 //#2................................................................
 // let n = 5;
@@ -88,8 +85,7 @@
 //         row = row +" "+j;
 //     }
 //     console.log(row);
-// } 
-
+// }
 
 //#3.......................................................................
 
@@ -100,7 +96,7 @@
 //         row = row +" "+i;
 //     }
 //     console.log(row);
-// } 
+// }
 
 //#4................................................................
 //  let n = 5;
@@ -110,7 +106,7 @@
 //         row = row +" "+j;
 //     }
 //     console.log(row);
-// } 
+// }
 
 // Second approch .....................(n-i)
 //  let n = 5;
@@ -120,8 +116,7 @@
 //         row = row +" "+j;
 //     }
 //     console.log(row);
-// } 
-
+// }
 
 //#5.................................................................
 //  let n = 5;
@@ -131,21 +126,21 @@
 //         row = row +" *";
 //     }
 //     console.log(row);
-// } 
+// }
 
 //#6.......................................................................
 
 //  let n = 5;
 // for(let i = 0;i<n;i++){
 //     let row="";
-//     for(let j=0;j< n - (i+1);j++){ 
+//     for(let j=0;j< n - (i+1);j++){
 //         row = row +" ";
 //     }
 //     for(let k =0;k <i+1; k++){
 //         row = row +"*";
-//     }        
+//     }
 //     console.log(row);
-// } 
+// }
 
 // #7 ...................................................................................
 
@@ -153,7 +148,7 @@
 // for(let i = 0;i<n;i++){
 //     let row="";
 //     let toggle =1;
-//     for(let j=0;j <= i;j++){ 
+//     for(let j=0;j <= i;j++){
 //         row = row + toggle;
 //         if (toggle == 1) {
 //             toggle = 0;
@@ -161,27 +156,58 @@
 //         else{
 //             toggle = 1;
 //         }
-//     }     
+//     }
 //     console.log(row);
-// } 
-
+// }
 
 // Count the number of digith's
 
-let n=-54;
-let count = 0;
+// let n=-54;
+// let count = 0;
 
-function Count(n){
-    if(n == 0){
-        return 1;
-    }
-// change the negative number to positive
-    n = Math.abs(n);
-    while(n>0){
-        n = Math.floor((n=n/10));
-        count++;
-    }
-    return count;
+// function Count(n){
+//     if(n == 0){
+//         return 1;
+//     }
+// // change the negative number to positive
+//     n = Math.abs(n);
+//     while(n>0){
+//         n = Math.floor(n/10);
+//         count++;
+//     }
+//     return count;
+// }
+
+// console.log(Count(n));
+
+/// Revese the number
+//  let n=-1445491;    // Let's check if this is a palindrome
+
+//  let rem =0;
+//  let res = 0;
+//  n = Math.abs(n);
+//  while (n>0) {
+//     rem = n % 10;
+//     res = (10*res) + rem; // consider res = 4 the res= (4*10)+3 means 40+3 then its become 43
+//     n = Math.floor(n/10); // Use Math.floor to remove the decimal
+//  }
+//  console.log(res);
+
+//Let's check if this is a palindrome
+let n = 1221;
+let reminder = 0;
+let result = 0;
+n = Math.abs(n);
+function findPalindrome(n) {
+  while (n > 0) {
+    reminder = n % 10;
+    result = (10 * result) + reminder; // consider res = 4 the res= (4*10)+3 means 40+3 then its become 43
+    n = Math.floor(n / 10); // Use Math.floor to remove the decimal
+  }
+  if (result == n) {
+    return result;
+  } else {
+    return "this is not palindrome";
+  }
 }
-
-console.log(Count(n));
+console.log(findPalindrome(n));
