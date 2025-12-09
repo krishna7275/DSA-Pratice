@@ -194,20 +194,70 @@
 //  console.log(res);
 
 //Let's check if this is a palindrome
-let n = 1221;
-let reminder = 0;
-let result = 0;
-n = Math.abs(n);
-function findPalindrome(n) {
-  while (n > 0) {
-    reminder = n % 10;
-    result = (10 * result) + reminder; // consider res = 4 the res= (4*10)+3 means 40+3 then its become 43
-    n = Math.floor(n / 10); // Use Math.floor to remove the decimal
-  }
-  if (result == n) {
-    return result;
-  } else {
-    return "this is not palindrome";
-  }
-}
-console.log(findPalindrome(n));
+// let n = 1221;
+// let nCopy = n;
+// let reminder = 0;
+// let result = 0;
+// n = Math.abs(n);
+// function findPalindrome(n) {
+//   while (n > 0) {
+//     reminder = n % 10;
+//     result = (10 * result) + reminder; // consider res = 4 the res= (4*10)+3 means 40+3 then its become 43
+//     n = Math.floor(n / 10); // Use Math.floor to remove the decimal
+//   }
+//   if (result == nCopy) {
+//     return result;
+//   } else {
+//     return "this is not palindrome";
+//   }
+// }
+// console.log(findPalindrome(n));
+
+
+// let Reverse the negative Numbre 
+
+// let n = -1221;
+// let nCopy = n;
+// let reminder = 0;
+// let result = 0;
+// n = Math.abs(n);
+// function findPalindrome(n) {
+//   while (n > 0) {
+//     reminder = n % 10;
+//     result = (10 * result) + reminder; // consider res = 4 the res= (4*10)+3 means 40+3 then its become 43
+//     n = Math.floor(n / 10); // Use Math.floor to remove the decimal
+//   }
+//   // if (result == nCopy) {
+//     return (nCopy <0)?-result:result;
+//   // } else {
+//   //   return "this is not palindrome";
+//   // }
+// }
+// console.log(findPalindrome(n));
+
+// Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    
+    let xCopy = x;
+    let last =0;
+    let result = 0;
+    x = Math.abs(x);
+
+    while(x > 0){
+        last = x % 10;
+        result = (10 * result) + last;
+        x = Math.floor(x / 10);
+    }
+     
+    let limit = 2**31;
+    if(result > limit  || result < -limit){
+        return 0;
+    }
+     
+     return (xCopy <0)?-result:result;
+};
