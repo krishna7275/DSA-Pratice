@@ -237,27 +237,44 @@
 
 // Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
 
-/**
- * @param {number} x
- * @return {number}
- */
-var reverse = function(x) {
+// /**
+//  * @param {number} x
+//  * @return {number}
+//  */
+// var reverse = function(x) {
     
-    let xCopy = x;
-    let last =0;
-    let result = 0;
-    x = Math.abs(x);
+//     let xCopy = x;
+//     let last =0;
+//     let result = 0;
+//     x = Math.abs(x);
 
-    while(x > 0){
-        last = x % 10;
-        result = (10 * result) + last;
-        x = Math.floor(x / 10);
-    }
+//     while(x > 0){
+//         last = x % 10;
+//         result = (10 * result) + last;
+//         x = Math.floor(x / 10);
+//     }
      
-    let limit = 2**31;
-    if(result > limit  || result < -limit){
-        return 0;
-    }
+//     let limit = 2**31;
+//     if(result > limit  || result < -limit){
+//         return 0;
+//     }
      
-     return (xCopy <0)?-result:result;
-};
+//      return (xCopy <0)?-result:result;
+// };
+
+
+//Remove Duplicates from Sorted Array
+// /**
+//  * @param {number[]} nums
+//  * @return {number}
+//  */
+// var removeDuplicates = function(nums) {
+//     let x  =0;
+//     for(let i = 0; i < nums.length; i++){
+//         if(nums[i] > nums[x]){
+//             x = x + 1;
+//             nums[x] = nums[i];
+//         }
+//     }
+//     return x + 1;
+// };
