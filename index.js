@@ -366,3 +366,51 @@
 //     }
 //     return totalSum - partialSum;
 // };
+
+// 136. Single Number
+// var singleNumber = function(nums) {
+//     let Xor = 0;
+//     for(let i=0;i<nums.length;i++){ 
+//         Xor = Xor ^ nums[i]
+//     }
+//     return Xor;
+// };
+
+// Sum of No. in Recurrion in js
+
+// let n = 5;
+// function sumNum(n){
+//     if(n < 1){
+//         return 0;
+//     }
+//         return n + sumNum(n-1);
+// }
+
+// console.log(sumNum(n));/
+
+//Factorail in Recursion 
+
+// let n = 5;
+// function fact(n){
+//     if(n < 1){
+//         return 1;
+//     }
+//         return n * fact(n-1);
+// }
+
+// console.log(fact(n));
+
+// 231. Power of Two using Recursion
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfTwo = function(n) {
+    if(n === 1){
+        return true;
+    }
+    else if(n<1 || (n%2 !== 0)){
+        return false;
+    }
+    return isPowerOfTwo(n/2);
+};
