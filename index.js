@@ -401,16 +401,26 @@
 // console.log(fact(n));
 
 // 231. Power of Two using Recursion
-/**
- * @param {number} n
- * @return {boolean}
- */
-var isPowerOfTwo = function(n) {
-    if(n === 1){
-        return true;
-    }
-    else if(n<1 || (n%2 !== 0)){
-        return false;
-    }
-    return isPowerOfTwo(n/2);
-};
+// var isPowerOfTwo = function(n) {
+//     if(n === 1){
+//         return true;
+//     }
+//     else if(n<1 || (n%2 !== 0)){
+//         return false;
+//     }
+//     return isPowerOfTwo(n/2);
+// };
+
+// Frist approch to find fibonacci Number is iterative Method
+// var fib = function(n) {
+//     if(n === 1) return 1;
+//     num1 = 0;
+//     num2 = 1;
+//     num3 = 0;
+//     for(let i = 2; i <= n;i++){
+//         num3 = num1 + num2;
+//         num1 = num2;
+//         num2 = num3;
+//     }
+//     return num3; 
+// }; 
