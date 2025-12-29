@@ -434,3 +434,35 @@
 //     }
 //     return fib(n-1) + fib(n-2);
 // };
+
+//Linear Search in JavaScript
+// let arr =[4,2,3,0,6,4];
+// let target = 0;
+//  function linerSearch(arr,target){
+//     for(let i =0; i<arr.length; i++){
+//         if ( arr[i] === target) return i;
+//     }
+//     return -1;
+//  }
+
+//  console.log(linerSearch(arr,target))
+
+//704 Binary Search 
+
+// var search = function(nums, target) {
+//     let left = 0;
+//     let rigth = nums.length - 1;
+//      while(rigth >= left){
+//         let middle = Math.floor((left+rigth)/2);
+//         if (nums[middle] === target){
+//             return middle;
+//         }
+//         else if(target > nums[middle]){
+//             left = middle + 1;
+//         }
+//         else (
+//             rigth = middle - 1
+//         )
+//      }
+//      return -1;
+// };
