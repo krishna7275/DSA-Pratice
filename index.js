@@ -494,23 +494,44 @@
 
 //Selection Sort In JS
 
+// let arr = [9,5,3,1,2,10];
+// let n = arr.length;
+// function selectionSort(a){
+//     for(let i = 0; i < n - 1; i++){
+//         let min = i;
+//         for(let j = i+1; j < n; j++){
+//             if(a[j] < a[min]){
+//                 min = j;
+//             }
+//             if ( min != i){
+//             let temp = a[i];
+//             a[i] = a[min];
+//             a[min] = temp;
+//             }
+//         }
+//     }
+//     return a;
+// }
+// let result = selectionSort(arr);
+// console.log(result);
+
+//Inserction Sort in JS
+
 let arr = [9,5,3,1,2,10];
 let n = arr.length;
-function selectionSort(a){
-    for(let i = 0; i < n - 1; i++){
-        let min = i;
-        for(let j = i+1; j < n; j++){
-            if(a[j] < a[min]){
-                min = j;
-            }
-            if ( min != i){
-            let temp = a[i];
-            a[i] = a[min];
-            a[min] = temp;
-            }
+ 
+function inserctionSort(a) {
+    for(let i = 1; i < n; i++){
+        let curr = a[i];
+        let prev = i-1;
+        while(a[prev] > curr && prev >= 0){
+            a[prev+1] = a[prev];
+            prev--;
         }
+        a[prev+1]=curr;
     }
     return a;
 }
-let result = selectionSort(arr);
-console.log(result);
+
+let result = inserctionSort(arr);
+console.log(inserctionSort(arr));
