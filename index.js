@@ -517,21 +517,51 @@
 
 //Inserction Sort in JS
 
-let arr = [9,5,3,1,2,10];
-let n = arr.length;
+// let arr = [9,5,3,1,2,10];
+// let n = arr.length;
  
-function inserctionSort(a) {
-    for(let i = 1; i < n; i++){
-        let curr = a[i];
-        let prev = i-1;
-        while(a[prev] > curr && prev >= 0){
-            a[prev+1] = a[prev];
-            prev--;
-        }
-        a[prev+1]=curr;
-    }
-    return a;
-}
+// function inserctionSort(a) {
+//     for(let i = 1; i < n; i++){
+//         let curr = a[i];
+//         let prev = i-1;
+//         while(a[prev] > curr && prev >= 0){
+//             a[prev+1] = a[prev];
+//             prev--;
+//         }
+//         a[prev+1]=curr;
+//     }
+//     return a;
+// }
 
-let result = inserctionSort(arr);
-console.log(inserctionSort(arr));
+// let result = inserctionSort(arr);
+// console.log(inserctionSort(arr));
+
+// 912. Sort an Array Merge Sort in JS 
+
+var sortArray = function(nums) {
+    if(nums.length <= 1){
+        return nums
+    }
+    let mid = Math.floor(nums.length/2);
+    let left = sortArray(nums.slice(0,mid));
+    let rigth = sortArray(nums.slice(mid));
+
+    return merge(left,rigth);
+};
+
+function merge(left,rigth) {
+    let res = [];
+    let i = 0;
+    let j = 0;
+    while(i < left.length && j < rigth.length){
+        if(left[i] < rigth[j]){
+            res.push(left[i]);
+            i++;
+        }
+        else{
+            res.push(rigth[j]);
+            j++;
+        }
+    }
+    return [...res,...left.slice(i),...rigth.slice(j)];
+}
